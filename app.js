@@ -1,3 +1,10 @@
+/*
+window.addEventListener("DOMContentLoaded", function () {
+  const loaderWrapper = document.getElementById("loader-wrapper");
+  loaderWrapper.style.display = "none";
+});
+*/
+
 var countDownDate = new Date("Dec 12, 2025 14:15:00").getTime();
 var x = setInterval(function () {
   var now = new Date().getTime();
@@ -18,63 +25,6 @@ var x = setInterval(function () {
 }, 1000);
 
 gsap.registerPlugin(ScrollTrigger);
-
-/*
-const tl = gsap.timeline();
-tl.from(".story-image", { x: -600 });
-tl.from(".story-content", { x: 600 });
-
-ScrollTrigger.create({
-  animation: tl,
-  trigger: ".our-story",
-  toggleActions: "restart pause reverse pause",
-  start: "top 90%",
-  end: "center center",
-  ease: "power2.out",
-  scrub: 1,
-  pin: false,
-  markers: true,
-  //anticipatePin: 1,
-});
-
-
-
-
-gsap.to(".hero-section", {
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top top",
-    end: () => {
-      const nextSection = document.querySelector(".details-sec");
-      const nextSectionTop = nextSection.offsetTop;
-      const viewportHeight = window.innerHeight;
-      const nextSectionCenter = nextSectionTop + nextSection.offsetHeight / 2;
-
-      return `bottom+=${nextSectionCenter - viewportHeight / 6}`;
-    },
-    pin: ".hero-section",
-    markers: true,
-  },
-});
-*/
-/*
-gsap.to(".hero-section", {
-  scrollTrigger: {
-    trigger: ".details-sec",
-    start: "bottom bottom",
-    end: () => {
-      const nextSection = document.querySelector(".details-sec");
-      const nextSectionTop = nextSection.offsetTop;
-      const viewportHeight = window.innerHeight;
-      const nextSectionCenter = nextSectionTop + nextSection.offsetHeight / 2;
-
-      return `bottom+=${nextSectionCenter / 2}`;
-    },
-    pin: ".hero-section",
-    markers: true,
-  },
-});
-*/
 
 // for hero content section
 const newTl = gsap.timeline();
@@ -180,3 +130,82 @@ ScrollTrigger.create({
   end: "bottom bottom",
   scrub: 1,
 });
+
+// for OUR STORY page
+const osTl = gsap.timeline();
+
+osTl.fromTo("#osTitle", { opacity: 0 }, { opacity: 1, duration: 5 }, 0);
+osTl.fromTo(
+  ".os-image",
+  { opacity: 0, x: -400 },
+  { opacity: 1, x: 0, duration: 3 },
+  0
+);
+osTl.fromTo(
+  ".os-content",
+  { opacity: 0, x: 400 },
+  { opacity: 1, x: 0, duration: 3 },
+  0
+);
+
+// for THINGS TO DO page
+
+const ttd = gsap.timeline({
+  defaults: { ease: "power4inOut", duration: 1 },
+});
+
+ttd.fromTo(".ttd-title", { opacity: 0 }, { opacity: 1, duration: 5 }, 0);
+ttd.fromTo(
+  ".ttd-box",
+  { opacity: 0, y: -50 },
+  { opacity: 1, y: 0, duration: 5 },
+  0
+);
+
+ttd.fromTo(
+  ".list-one li",
+  {
+    x: -50,
+    opacity: 0,
+  },
+  {
+    stagger: 0.5,
+    x: 0,
+    opacity: 1,
+    duration: 1,
+  },
+  0
+);
+ttd.fromTo(
+  ".list-two li",
+  {
+    y: -50,
+    opacity: 0,
+  },
+  {
+    stagger: 0.5,
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    //delay: 1,
+  },
+  0
+);
+ttd.fromTo(
+  ".list-three li",
+  {
+    x: 50,
+    opacity: 0,
+  },
+  {
+    stagger: 0.5,
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    //delay: 2,
+  },
+  0
+);
+//ttd.fromTo(".box-1", { opacity: 0 }, { opacity: 1, duration: 5 }, 0);
+//ttd.fromTo(".box-2", { opacity: 0 }, { opacity: 1, duration: 5, delay: 1 }, 0);
+//ttd.fromTo(".box-3", { opacity: 0 }, { opacity: 1, duration: 5, delay: 2 }, 0);
