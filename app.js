@@ -1,9 +1,3 @@
-/*
-window.addEventListener("DOMContentLoaded", function () {
-  const loaderWrapper = document.getElementById("loader-wrapper");
-  loaderWrapper.style.display = "none";
-});
-*/
 
 var countDownDate = new Date("Dec 12, 2025 14:15:00").getTime();
 var x = setInterval(function () {
@@ -23,6 +17,45 @@ var x = setInterval(function () {
     document.getElementById("countdown").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// navbar mobile
+const menu_btn = document.querySelector(".hamburger");
+const mobile_menu = document.querySelector("#nav-links-mobile");
+
+menu_btn.addEventListener("click", function () {
+  menu_btn.classList.toggle("is-active");
+  mobile_menu.classList.toggle("is-active");
+});
+
+// GALLERY
+const modal = document.querySelector(".modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close");
+
+// Get all images with the class 'carousel-img'
+const images = document.querySelectorAll(".carousel-img");
+
+images.forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+// Close modal on close button click
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal if clicking outside the image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// END GALLERY
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,3 +242,11 @@ ttd.fromTo(
 //ttd.fromTo(".box-1", { opacity: 0 }, { opacity: 1, duration: 5 }, 0);
 //ttd.fromTo(".box-2", { opacity: 0 }, { opacity: 1, duration: 5, delay: 1 }, 0);
 //ttd.fromTo(".box-3", { opacity: 0 }, { opacity: 1, duration: 5, delay: 2 }, 0);
+
+// MEDIA QUERIES
+let wd = gsap.matchMedia();
+
+wd.add("(max-width: 900px)", () => {
+  let deets = gsap.timeline();
+});
+
