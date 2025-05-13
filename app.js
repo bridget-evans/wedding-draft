@@ -28,7 +28,32 @@ menu_btn.addEventListener("click", function () {
 });
 
 // GALLERY
+const modal = document.querySelector(".modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close");
 
+// Get all images with the class 'carousel-img'
+const images = document.querySelectorAll(".carousel-img");
+
+images.forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+// Close modal on close button click
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal if clicking outside the image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // END GALLERY
 
