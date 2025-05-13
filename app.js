@@ -239,14 +239,7 @@ ttd.fromTo(
   },
   0
 );
-//ttd.fromTo(".box-1", { opacity: 0 }, { opacity: 1, duration: 5 }, 0);
-//ttd.fromTo(".box-2", { opacity: 0 }, { opacity: 1, duration: 5, delay: 1 }, 0);
-//ttd.fromTo(".box-3", { opacity: 0 }, { opacity: 1, duration: 5, delay: 2 }, 0);
 
-// MEDIA QUERIES
-let wd = gsap.matchMedia();
 
-wd.add("(max-width: 900px)", () => {
-  let deets = gsap.timeline();
-});
+
 
