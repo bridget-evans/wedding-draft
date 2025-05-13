@@ -588,6 +588,9 @@ img {
   .details-sec {
     padding: 80px 10%;
   }
+  .os-inner {
+    padding: 80px 10%;
+  }
 }
 @media screen and (max-width: 1350px) {
   .details-sec {
@@ -607,6 +610,34 @@ img {
   }
   .center img {
     max-width: 600px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .ttd-content-bg {
+    padding: 150px 0;
+    margin: 0 5%;
+  }
+  .ttd-content-bg h2 {
+    font-size: 3rem;
+    padding: 50px 0 0 0;
+  }
+  .ttd-box h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+  }
+  .ttd-box ul {
+    margin-bottom: 0;
+  }
+  .ttd-box li {
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+  .carousel-wrapper {
+    margin: 100px 0 200px 0;
+  }
+  .carousel-item img {
+    max-width: 250px;
+    min-height: 400px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -665,6 +696,41 @@ img {
   .reg-content h3 {
     font-size: 3rem;
   }
+  .os-inner {
+    padding: 50px 10%;
+  }
+  .os-flex {
+    padding-top: 30px;
+  }
+  .os-title h2 {
+    font-size: 3.5rem;
+  }
+  .carousel-wrapper {
+    margin: 80px 0 140px 0;
+  }
+  .carousel-item img {
+    max-width: 200px;
+    min-height: 350px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .os-flex {
+    display: block;
+  }
+  .os-image img {
+    margin: 0 auto;
+  }
+  .os-content p {
+    padding-left: 0;
+  }
+  .ttd-content-bg h2 {
+    padding: 30px 0 0 0;
+  }
+  .ttd-flex {
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px 20px 20px;
+  }
 }
 @media screen and (max-width: 1000px) {
   .details-inner h3 {
@@ -719,6 +785,26 @@ img {
   }
   .countdown p {
     padding-bottom: 100px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .os-image img {
+    max-width: 300px;
+  }
+  .os-content p {
+    font-size: 1.1rem;
+  }
+  .carousel-wrapper {
+    margin: 80px 5% 140px 5%;
+    width: auto;
+  }
+  .carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+  .doubled {
+    display: none;
   }
 }
 @media screen and (max-width: 850px) {
@@ -784,6 +870,12 @@ img {
   }
   .right ul {
     text-align: center;
+  }
+  .os-inner {
+    padding: 50px 5%;
+  }
+  .os-title h2 {
+    font-size: 3rem;
   }
 }
 @media screen and (max-width: 550px) {
