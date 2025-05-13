@@ -398,14 +398,177 @@ img {
 /**/
 /**/
 /* PAGE - OUR STORY */
+.os-inner {
+  padding: 100px 20%;
+}
+.os-title h2 {
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  margin: 0;
+  font-size: 4rem;
+}
+.os-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+.os-image img {
+  border-radius: 10px;
+  filter: grayscale(100%);
+  max-width: 400px;
+}
+.os-content p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 40px;
+  padding-left: 60px;
+  text-align: center;
+}
 /* END PAGE - OUR STORY */
 /**/
 /**/
 /* PAGE - GALLERY */
+.gallery-title h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  white-space: nowrap;
+  margin: 100px 0 300px 0;
+}
+.carousel {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  /*transform: rotateX(360deg);*/
+  animation: moveSlides 30s linear infinite;
+}
+@keyframes moveSlides {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.carousel-item img {
+  cursor: pointer;
+  max-width: 300px;
+  min-height: 450px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+.carousel:hover {
+  animation-play-state: paused;
+}
+.carousel-item img:hover {
+  opacity: 1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  margin: 50px auto;
+  display: block;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+#modal-img {
+  transition: 0.3s;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+/*#modal-img:hover {
+  opacity: 0.7;
+}*/
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 /* END PAGE - GALLERY */
 /**/
 /**/
 /* PAGE - THINGS TO DO */
+.ttd-bg {
+  background-image: url(https://images.unsplash.com/photo-1615227776911-8c1a6b260d07?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-position: cover;
+  filter: grayscale(100%);
+}
+.ttd-content-bg {
+  padding: 245px 0;
+  margin: 0 10%;
+}
+.ttd-content {
+  background-color: rgb(128, 128, 128);
+  border-radius: 10px;
+}
+.ttd-content h2 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.5rem;
+  padding: 70px 0 20px 0;
+}
+.ttd-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 70px;
+}
+.ttd-box {
+  color: white;
+  text-align: center;
+}
+.ttd-box h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+.ttd-box ul {
+  padding: 0;
+}
+.ttd-box li {
+  font-family: "IBM Plex Sans", sans-serif;
+  list-style-type: none;
+  line-height: 40px;
+  font-size: 1.2rem;
+  opacity: 0;
+}
 /* END PAGE - THINGS TO DO */
 /**/
 /**/
