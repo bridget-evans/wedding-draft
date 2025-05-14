@@ -52,7 +52,7 @@ img {
   font-weight: 500;
   font-family: "Cormorant Garamond", serif;
 }
-.navbar nav li button {
+.nav-rsvp {
   background: transparent;
   color: white;
   border: 1px solid white;
