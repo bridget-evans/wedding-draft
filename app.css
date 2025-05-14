@@ -251,6 +251,7 @@ img {
   margin-bottom: 0px;
   transition: 0.3s ease-in-out;
   font-weight: 900;
+  text-decoration: none;
 }
 #detail-rsvp:hover {
   color: white;
