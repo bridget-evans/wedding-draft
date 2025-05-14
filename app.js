@@ -56,7 +56,7 @@ modal.addEventListener("click", (e) => {
 });
 
 // END GALLERY
-
+document.addEventListener("DOMContentLoaded", () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // for hero content section
@@ -239,7 +239,7 @@ ttd.fromTo(
   },
   0
 );
-
+ });
 
 
 
