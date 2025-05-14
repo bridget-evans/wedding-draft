@@ -1,62 +1,5 @@
 
-var countDownDate = new Date("Dec 12, 2025 14:15:00").getTime();
-var x = setInterval(function () {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    days + " : " + hours + " : " + minutes + " : " + seconds;
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-// navbar mobile
-const menu_btn = document.querySelector(".hamburger");
-const mobile_menu = document.querySelector("#nav-links-mobile");
-
-menu_btn.addEventListener("click", function () {
-  menu_btn.classList.toggle("is-active");
-  mobile_menu.classList.toggle("is-active");
-});
-
-// GALLERY
-const modal = document.querySelector(".modal");
-const modalImg = document.getElementById("modal-img");
-const closeBtn = document.querySelector(".close");
-
-// Get all images with the class 'carousel-img'
-const images = document.querySelectorAll(".carousel-img");
-
-images.forEach((img) => {
-  img.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    modalImg.alt = img.alt;
-  });
-});
-
-// Close modal on close button click
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Close modal if clicking outside the image
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-// END GALLERY
-document.addEventListener("DOMContentLoaded", () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // for hero content section
@@ -239,7 +182,64 @@ ttd.fromTo(
   },
   0
 );
- });
+ 
 
 
+var countDownDate = new Date("Dec 12, 2025 14:15:00").getTime();
+var x = setInterval(function () {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " : " + hours + " : " + minutes + " : " + seconds;
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+// navbar mobile
+const menu_btn = document.querySelector(".hamburger");
+const mobile_menu = document.querySelector("#nav-links-mobile");
+
+menu_btn.addEventListener("click", function () {
+  menu_btn.classList.toggle("is-active");
+  mobile_menu.classList.toggle("is-active");
+});
+
+// GALLERY
+const modal = document.querySelector(".modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close");
+
+// Get all images with the class 'carousel-img'
+const images = document.querySelectorAll(".carousel-img");
+
+images.forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+// Close modal on close button click
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal if clicking outside the image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// END GALLERY
 
